@@ -1,8 +1,9 @@
 {
-  "name": "vue-soundcloud-player",
+  "name": "vue-custom-soundcloud-player",
   "version": "1.1.0",
   "description": "Custom Soundcloud player supporting single tracks & playlists",
   "main": "dist/index.js",
+  "private": true,
   "scripts": {
     "build": "webpack --config webpack.config --progress --colors -p",
     "lint": "eslint 'src/**/*.{js,vue}'",

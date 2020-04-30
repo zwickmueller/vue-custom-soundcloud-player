@@ -15,6 +15,7 @@
 </template>
 
 <script>
+// const soundcloudApi = 'https://w.soundcloud.com/player/api.js';
 import classnames from "classnames";
 import {
   soundcloudApi

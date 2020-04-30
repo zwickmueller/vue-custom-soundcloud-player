@@ -18,28 +18,33 @@ const config = {
   },
   module: {
     rules: [{
-      test: /\.js$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/
-    },
-    {
-      test: /\.vue$/,
-      loader: 'vue-loader',
-      options: {
-        loaders: {
-          'css': [
-            'vue-style-loader',
-            'css-loader',
-          ]
+        test: /\.js$/,
+        loader: 'babel-loader',
+        options: {
+          // Here you should change 'env' to '@babel/preset-env'
+          presets: ['@babel/preset-env'],
+        },
+        exclude: /node_modules/
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            'css': [
+              'vue-style-loader',
+              'css-loader',
+            ]
+          }
         }
+      }, {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
       }
-    }, {
-      test: /\.css$/,
-      use: [
-        'vue-style-loader',
-        'css-loader'
-      ]
-    }],
+    ],
   },
   externals: {
     'classnames': 'classnames',

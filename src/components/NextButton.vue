@@ -1,9 +1,5 @@
 <template>
-  <button
-    class="sc-player__next"
-    type="button"
-    @click="nextTrack"
-  />
+<button class="sc-player__next" type="button" @click="nextTrack" />
 </template>
 
 <script>
@@ -31,8 +27,9 @@ export default {
   },
   methods: {
     nextTrack() {
-      this.soundcloud.isPaused(function(paused) {
+      this.soundcloud.isPaused((paused) => {
         if (paused) {
+          console.log(this.soundcloud);
           this.soundcloud.next().pause();
         } else {
           this.soundcloud.next();

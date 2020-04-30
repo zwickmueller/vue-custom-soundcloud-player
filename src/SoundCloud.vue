@@ -1,13 +1,10 @@
 <template>
 <div class="sc-player">
   <div v-if="currentTrack" :class="currentTrackClasses">
-    <TitleArtist :artist="currentTrack.artist" :artist-url="currentTrack.artist_url" />
-    <TitleTrack :permalink="currentTrack.permalink_url" :title="currentTrack.title" />
     <Buttons :set-current-track="setCurrentTrack" :soundcloud="soundcloud" :sounds="sounds" :track-index="trackIndex" :track-playing="trackPlaying" />
-    <p>AIOSDjaosi jaiodjao sidjaosdij aosidj aoidjsaiod</p>
-    <!-- <BackgroundArt :background="currentTrack.background" /> -->
-    <!-- <Shade /> -->
-    <!-- <Wave :percent-played="percentPlayed" /> -->
+    <TitleTrack :permalink="currentTrack.permalink_url" :title="currentTrack.title" />
+    <TitleArtist :artist="currentTrack.artist" :artist-url="currentTrack.artist_url" />
+    <Wave :percent-played="percentPlayed" />
   </div>
   <Playlist :set-current-track="setCurrentTrack" :soundcloud="soundcloud" :sounds="sounds" :theme="theme" />
   <Iframe :playlist="playlist" :track="track" @setIframeRef="onSetIframeRef" />
@@ -21,11 +18,9 @@ import {
   soundcloudApi
 } from "./utils/consts";
 import loadScript from "./utils/loadScript";
-import BackgroundArt from './components/BackgroundArt.vue';
 import Buttons from './components/Buttons.vue';
 import Iframe from './components/Iframe.vue';
 import Playlist from './components/Playlist.vue';
-import Shade from './components/Shade.vue';
 import TitleArtist from './components/TitleArtist.vue';
 import TitleTrack from './components/TitleTrack.vue';
 import Wave from './components/Wave.vue';
@@ -34,11 +29,9 @@ import './SoundCloud.css'
 export default {
   name: 'SoundCloud',
   components: {
-    BackgroundArt,
     Buttons,
     Iframe,
     Playlist,
-    Shade,
     TitleArtist,
     TitleTrack,
     Wave

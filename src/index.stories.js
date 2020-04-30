@@ -27,3 +27,8 @@ export const lightTheme = () => ({
   components: { SoundCloud },
   template: '<StyleWrapper><SoundCloud playlist="73448639" theme="light" /></StyleWrapper>'
 });
+
+export const SX = () => ({
+  components: { SoundCloud },
+  template: '<StyleWrapper><SoundCloud playlist="1042651861" /></StyleWrapper>'
+});

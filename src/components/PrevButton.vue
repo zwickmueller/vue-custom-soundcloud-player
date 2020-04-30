@@ -1,9 +1,5 @@
 <template>
-  <button
-    class="sc-player__prev"
-    type="button"
-    @click="prevTrack"
-  />
+<button class="sc-player__prev" type="button" @click="prevTrack" />
 </template>
 
 <script>
@@ -31,7 +27,7 @@ export default {
   },
   methods: {
     prevTrack() {
-      this.soundcloud.isPaused(function(paused) {
+      this.soundcloud.isPaused((paused) => {
         if (paused) {
           this.soundcloud.prev().pause();
         } else {

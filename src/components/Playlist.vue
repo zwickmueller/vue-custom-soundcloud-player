@@ -1,23 +1,12 @@
 <template>
-  <ul
-    v-if="showPlaylist"
-    :class="playlistClasses"
-  >
-    <li
-      v-for="(sound, idx) in sounds"
-      :key="idx"
-      class="sc-player__playlist__item"
-      @click="selectTrack(idx)"
-    >
-      <span
-        class="sc-player__playlist__thumb"
-        :style="backgroundImage(sound)"
-      />
-      <span class="sc-player__playlist__title">
-        {{ sound.title }}
-      </span>
-    </li>
-  </ul>
+<ul v-if="showPlaylist" :class="playlistClasses">
+  <li v-for="(sound, idx) in sounds" :key="idx" class="sc-player__playlist__item" @click="selectTrack(idx)">
+    <span class="sc-player__playlist__thumb" :style="backgroundImage(sound)" />
+    <span class="sc-player__playlist__title">
+      {{ sound.title }}
+    </span>
+  </li>
+</ul>
 </template>
 
 <script>
@@ -34,6 +23,10 @@ export default {
       type: Object,
       default: undefined
     },
+    hide: {
+      type: Boolean,
+      default: true
+    },
     sounds: {
       type: Array,
       default: () => {
@@ -47,9 +40,12 @@ export default {
   },
   computed: {
     playlistClasses() {
-      return classnames('sc-player__playlist', {'sc-player--dark': this.theme!=='light'});
+      return classnames('sc-player__playlist', {
+        'sc-player--dark': this.theme !== 'light'
+      });
     },
     showPlaylist() {
+      if (this.hide == true) return false
       return this.sounds && this.sounds.length > 1 ? true : false;
     }
   },

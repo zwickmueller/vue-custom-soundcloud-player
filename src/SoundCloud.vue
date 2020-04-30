@@ -4,6 +4,7 @@
     <TitleArtist :artist="currentTrack.artist" :artist-url="currentTrack.artist_url" />
     <TitleTrack :permalink="currentTrack.permalink_url" :title="currentTrack.title" />
     <Buttons :set-current-track="setCurrentTrack" :soundcloud="soundcloud" :sounds="sounds" :track-index="trackIndex" :track-playing="trackPlaying" />
+    <p>AIOSDjaosi jaiodjao sidjaosdij aosidj aoidjsaiod</p>
     <!-- <BackgroundArt :background="currentTrack.background" /> -->
     <!-- <Shade /> -->
     <!-- <Wave :percent-played="percentPlayed" /> -->

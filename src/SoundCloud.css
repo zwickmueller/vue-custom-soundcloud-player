@@ -18,11 +18,12 @@
 }
 
 .sc-player__current {
-  background: black;
+  background: transparent;
   overflow: hidden;
   display: flex;
   position: relative;
   align-items: center;
+  height: 100%;
 }
 
 .sc-player__wave {
@@ -88,22 +89,24 @@
 
 .sc-player__buttons {
   /* padding: 0 0 20px 0; */
-  min-width: 90px;
+  min-width: 110px;
+  padding-left: .4em;
   text-align: right;
   display: block;
+  align-self: flex-end;
 }
 
 .sc-player__play,
 .sc-player__prev,
 .sc-player__next {
   background: transparent;
-  border: 2px solid white;
-  border-radius: 24px;
+  border: 1px solid white;
+  border-radius: 20px;
   cursor: pointer;
-  height: 24px;
+  height: 22px;
   position: relative;
   transition: opacity .3s ease;
-  width: 24px;
+  width: 32px;
 }
 
 .sc-player__play:focus,
@@ -115,16 +118,14 @@
 .sc-player__play:before,
 .sc-player__play:after {
   border-style: solid;
-  border-width: 5px 0 5px 8px;
+  border-width: 5px 0 5px 12px;
   border-color: transparent transparent transparent rgba(255, 255, 255, 1);
   content: "";
   display: block;
-  left: 7px;
+  left: 11px;
   margin: 0 auto;
   position: absolute;
   top: 5px;
-  /* height: 4px;
-  width: 12px; */
 }
 
 /* .sc-player--pause:before,
@@ -166,7 +167,7 @@
 .sc-player__next:after {
   background: transparent;
   border: 7px solid transparent;
-  border-width: 4px 6px;
+  border-width: 4px 9px;
   border-left-color: #fff;
   content: "";
   margin-top: -6px;
@@ -192,7 +193,7 @@
 }
 
 .sc-player__next:before {
-  left: 6px;
+  left: 14px;
   top: 12px;
 }
 

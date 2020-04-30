@@ -1,5 +1,5 @@
 <template>
-<div class="sc-player">
+<div class="sc-player" :style="debug ? 'background: black' : ''">
   <div v-if="currentTrack" :class="currentTrackClasses">
     <Buttons :set-current-track="setCurrentTrack" :soundcloud="soundcloud" :sounds="sounds" :track-index="trackIndex" :track-playing="trackPlaying" />
     <TitleTrack :permalink="currentTrack.permalink_url" :title="currentTrack.title" />
@@ -52,6 +52,10 @@ export default {
     track: {
       type: String,
       default: undefined
+    },
+    debug: {
+      type: Boolean,
+      default: false
     }
   },
   data() {

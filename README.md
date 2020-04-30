@@ -2,7 +2,7 @@
 
 # Vue custom soundcloud player
 
-Custom Soundcloud player supporting single tracks & playlists
+Custom SELAM X Soundcloud player supporting single tracks & playlists
 
 ### Example
 
@@ -31,18 +31,18 @@ export default {
 
 #### Options
 
-| Name | Type | Default | Description |
-|-----------|-----------|-------------|-------------|
-| track | `string` | - | ID of track |
-| playlist | `string` | - | ID of playlist |
-| mini | `boolean` | `false` | Small player with inline play button |
-| theme | `string` | `dark` | Playlist colours - accepts `dark` or `light` |
+| Name     | Type      | Default | Description                                  |
+| -------- | --------- | ------- | -------------------------------------------- |
+| track    | `string`  | -       | ID of track                                  |
+| playlist | `string`  | -       | ID of playlist                               |
+| mini     | `boolean` | `false` | Small player with inline play button         |
+| theme    | `string`  | `dark`  | Playlist colours - accepts `dark` or `light` |
 
 Track or playlist IDs can be found from Soundcloud embed player URLs
 
 ### Browser Support
 
-* Chrome
-* Firefox
-* Internet Explorer 9+
-* Opera
+-   Chrome
+-   Firefox
+-   Internet Explorer 9+
+-   Opera

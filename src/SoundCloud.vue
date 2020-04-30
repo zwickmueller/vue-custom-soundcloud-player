@@ -1,45 +1,23 @@
 <template>
-  <div class="sc-player">
-    <div
-      v-if="currentTrack"
-      :class="currentTrackClasses"
-    >
-      <TitleArtist
-        :artist="currentTrack.artist"
-        :artist-url="currentTrack.artist_url"
-      />
-      <TitleTrack
-        :permalink="currentTrack.permalink_url"
-        :title="currentTrack.title"
-      />
-      <Buttons
-        :set-current-track="setCurrentTrack"
-        :soundcloud="soundcloud"
-        :sounds="sounds"
-        :track-index="trackIndex"
-        :track-playing="trackPlaying"
-      />
-      <BackgroundArt :background="currentTrack.background" />
-      <Shade />
-      <Wave :percent-played="percentPlayed" />
-    </div>
-    <Playlist
-      :set-current-track="setCurrentTrack"
-      :soundcloud="soundcloud"
-      :sounds="sounds"
-      :theme="theme"
-    />
-    <Iframe
-      :playlist="playlist"
-      :track="track"
-      @setIframeRef="onSetIframeRef"
-    />
+<div class="sc-player">
+  <div v-if="currentTrack" :class="currentTrackClasses">
+    <TitleArtist :artist="currentTrack.artist" :artist-url="currentTrack.artist_url" />
+    <TitleTrack :permalink="currentTrack.permalink_url" :title="currentTrack.title" />
+    <Buttons :set-current-track="setCurrentTrack" :soundcloud="soundcloud" :sounds="sounds" :track-index="trackIndex" :track-playing="trackPlaying" />
+    <!-- <BackgroundArt :background="currentTrack.background" /> -->
+    <!-- <Shade /> -->
+    <!-- <Wave :percent-played="percentPlayed" /> -->
   </div>
+  <Playlist :set-current-track="setCurrentTrack" :soundcloud="soundcloud" :sounds="sounds" :theme="theme" />
+  <Iframe :playlist="playlist" :track="track" @setIframeRef="onSetIframeRef" />
+</div>
 </template>
 
 <script>
 import classnames from "classnames";
-import { soundcloudApi } from "./utils/consts";
+import {
+  soundcloudApi
+} from "./utils/consts";
 import loadScript from "./utils/loadScript";
 import BackgroundArt from './components/BackgroundArt.vue';
 import Buttons from './components/Buttons.vue';
@@ -72,7 +50,7 @@ export default {
       type: String,
       default: undefined
     },
-   theme: {
+    theme: {
       type: String,
       default: "dark"
     },
@@ -94,7 +72,9 @@ export default {
   },
   computed: {
     currentTrackClasses() {
-      return classnames('sc-player__current', {'sc-player--mini': this.mini});
+      return classnames('sc-player__current', {
+        'sc-player--mini': this.mini
+      });
     }
   },
   methods: {

@@ -1,5 +1,5 @@
 <template>
-<div class="sc-player__buttons">
+<div class="sc-player__buttons" :style=" trackIndex !== 0 ? 'text-align: left' : ''">
   <PrevButton v-if="hasPlaylist && trackIndex !== 0" :set-current-track="setCurrentTrack" :soundcloud="soundcloud" :sounds="sounds" :track-index="trackIndex" />
   <PlayButton :soundcloud="soundcloud" :track-playing="trackPlaying" />
   <NextButton v-if="hasPlaylist && trackIndex !== sounds.length-1" :set-current-track="setCurrentTrack" :soundcloud="soundcloud" :sounds="sounds" :track-index="trackIndex" />

@@ -1,9 +1,5 @@
 <template>
-  <button
-    :class="buttonClasses"
-    type="button"
-    @click="playPause"
-  />
+<button :class="buttonClasses" type="button" @click="playPause" />
 </template>
 
 <script>
@@ -23,7 +19,9 @@ export default {
   },
   computed: {
     buttonClasses() {
-      return classnames('sc-player__play', {'sc-player--pause': this.trackPlaying});
+      return classnames('sc-player__play', {
+        'sc-player--pause': this.trackPlaying
+      });
     }
   },
   methods: {

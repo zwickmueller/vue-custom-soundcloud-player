@@ -89,7 +89,7 @@
 
 .sc-player__buttons {
   /* padding: 0 0 20px 0; */
-  min-width: 110px;
+  width: 119px;
   padding-left: .4em;
   text-align: right;
   display: block;
@@ -113,6 +113,25 @@
 .sc-player__prev:focus,
 .sc-player__next:focus {
   outline: none;
+}
+
+.sc-player__play.sc-player--pause:before,
+.sc-player__play.sc-player--pause:after {
+  border: 1px solid white;
+  width: 1px;
+  height: 8px;
+  /* border-width: 5px 0 5px 12px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 1); */
+  content: "";
+  display: block;
+  left: 11px;
+  margin: 0 auto;
+  position: absolute;
+  top: 5px;
+}
+
+.sc-player__play.sc-player--pause:before {
+  left: 16px
 }
 
 .sc-player__play:before,

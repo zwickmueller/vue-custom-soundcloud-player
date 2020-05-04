@@ -1,5 +1,7 @@
 <template>
 <div class="sc-player__title">
+  <Wave :percent-played="percentPlayed" />
+
   <a class="sc-link-title" :href="permalink" target="_blank" rel="noopener noreferrer">
     <marquee-text :repeat="3">
 
@@ -11,11 +13,13 @@
 
 <script>
 import MarqueeText from 'vue-marquee-text-component'
+import Wave from './Wave.vue';
 
 export default {
   name: "TitleTrack",
   components: {
-    MarqueeText
+    MarqueeText,
+    Wave
   },
   props: {
     permalink: {
@@ -25,6 +29,10 @@ export default {
     title: {
       type: String,
       default: ''
+    },
+    percentPlayed: {
+      type: Number,
+      default: 0
     }
   }
 };

@@ -1,8 +1,6 @@
 <template>
-<div class="sc-player__artist">
+<div class="sc-player__artist is-narrow sifi tag">
   <a class="sc-link-artist" :href="artistUrl" target="_blank" rel="noopener noreferrer">
-
-    {{ artist }}
   </a>
 </div>
 </template>

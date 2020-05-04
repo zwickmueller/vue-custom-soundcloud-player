@@ -2,13 +2,12 @@
 <div class="sc-player" :style="debug ? 'background: black' : ''">
   <div v-if="currentTrack" :class="currentTrackClasses">
     <Buttons :set-current-track="setCurrentTrack" :soundcloud="soundcloud" :sounds="sounds" :track-index="trackIndex" :track-playing="trackPlaying" />
-    <div class="columns is-paddingless is-marginless">
-      <TitleTrack class="column" :permalink="currentTrack.permalink_url" :title="currentTrack.title" />
+    <div class="columns is-paddingless is-marginless" style="width: 100%;">
+      <TitleTrack :percent-played="percentPlayed" class="column  sifi tag " :permalink="currentTrack.permalink_url" :title="currentTrack.title" />
 
 
-      <TitleArtist class="column is-narrow" :artist="currentTrack.artist" :artist-url="currentTrack.artist_url" />
+      <TitleArtist class="column is-narrow  sifi tag " :artist="currentTrack.artist" :artist-url="currentTrack.artist_url" />
     </div>
-    <Wave :percent-played="percentPlayed" />
   </div>
   <Playlist :set-current-track="setCurrentTrack" :soundcloud="soundcloud" :sounds="sounds" :theme="theme" />
   <Iframe :playlist="playlist" :track="track" @setIframeRef="onSetIframeRef" />
@@ -27,7 +26,6 @@ import Iframe from './components/Iframe.vue';
 import Playlist from './components/Playlist.vue';
 import TitleArtist from './components/TitleArtist.vue';
 import TitleTrack from './components/TitleTrack.vue';
-import Wave from './components/Wave.vue';
 import './SoundCloud.css'
 
 export default {
@@ -38,7 +36,6 @@ export default {
     Playlist,
     TitleArtist,
     TitleTrack,
-    Wave
   },
   props: {
     mini: {

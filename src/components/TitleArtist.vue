@@ -1,13 +1,9 @@
 <template>
-  <div class="sc-player__artist">
-    <a
-      :href="artistUrl"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {{ artist }}
-    </a>
-  </div>
+<div class="sc-player__artist">
+  <a class="sc-link-artist" :href="artistUrl" target="_blank" rel="noopener noreferrer">
+    {{ artist }}
+  </a>
+</div>
 </template>
 
 <script>

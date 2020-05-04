@@ -1,13 +1,9 @@
 <template>
-  <div class="sc-player__title">
-    <a
-      :href="permalink"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {{ title }}
-    </a>
-  </div>
+<div class="sc-player__title">
+  <a class="sc-link-title" :href="permalink" target="_blank" rel="noopener noreferrer">
+    {{ title }}
+  </a>
+</div>
 </template>
 
 <script>

@@ -1,14 +1,22 @@
 <template>
 <div class="sc-player__title">
   <a class="sc-link-title" :href="permalink" target="_blank" rel="noopener noreferrer">
-    {{ title }}
+    <marquee-text :repeat="3">
+
+      <span> {{ title }}</span>
+    </marquee-text>
   </a>
 </div>
 </template>
 
 <script>
+import MarqueeText from 'vue-marquee-text-component'
+
 export default {
   name: "TitleTrack",
+  components: {
+    MarqueeText
+  },
   props: {
     permalink: {
       type: String,
@@ -21,3 +29,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+.sc-link-title .marquee-text-text {
+  margin-left: 1em;
+}
+</style>

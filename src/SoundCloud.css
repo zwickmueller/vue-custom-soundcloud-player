@@ -40,8 +40,8 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  align-items: center;
-  height: 100%;
+  /* align-items: center;
+  height: 100%; */
 }
 
 .sc-player__wave {
@@ -106,7 +106,7 @@
 .sc-player__title {
   font-size: 12px;
   /* width: 100%; */
-  padding-left: 1em
+  /* padding-left: 1em */
 }
 
 .sc-player__title a {

@@ -2,8 +2,12 @@
 <div class="sc-player" :style="debug ? 'background: black' : ''">
   <div v-if="currentTrack" :class="currentTrackClasses">
     <Buttons :set-current-track="setCurrentTrack" :soundcloud="soundcloud" :sounds="sounds" :track-index="trackIndex" :track-playing="trackPlaying" />
-    <TitleTrack :permalink="currentTrack.permalink_url" :title="currentTrack.title" />
-    <TitleArtist :artist="currentTrack.artist" :artist-url="currentTrack.artist_url" />
+    <div class="columns is-paddingless is-marginless">
+      <TitleTrack class="column" :permalink="currentTrack.permalink_url" :title="currentTrack.title" />
+
+
+      <TitleArtist class="column is-narrow" :artist="currentTrack.artist" :artist-url="currentTrack.artist_url" />
+    </div>
     <Wave :percent-played="percentPlayed" />
   </div>
   <Playlist :set-current-track="setCurrentTrack" :soundcloud="soundcloud" :sounds="sounds" :theme="theme" />

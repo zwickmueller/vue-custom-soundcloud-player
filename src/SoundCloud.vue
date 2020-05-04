@@ -106,6 +106,7 @@ export default {
       loadScript(soundcloudApi, () => {
         this.soundcloud = SC.Widget(this.iframeRef);
         this.bindSoundcloudEvents();
+        this.$emit('ready', true);
       });
     },
     setCurrentTrack(track, index) {

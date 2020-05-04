@@ -6,6 +6,7 @@
     <marquee-text :repeat="3">
 
       <span> {{ title }}</span>
+
     </marquee-text>
   </a>
 </div>

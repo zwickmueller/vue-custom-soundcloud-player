@@ -87,9 +87,11 @@
 
 .sc-player__artist {
   font-size: 12px;
-  opacity: .8;
-  margin-left: auto;
-  min-width: 90px;
+  position: absolute;
+  margin-right: 1em;
+  right: 0;
+  align-self: center;
+  margin: 0 1em 0 0em;
 }
 
 .sc-player__artist a {
@@ -97,9 +99,11 @@
   background-position: 100% 50%;
   background-repeat: no-repeat;
   background-size: 27px 12px;
-  color: #fff;
-  display: inline-block;
-  padding-right: 37px;
+  color: rgba(236, 236, 236, .75);
+  /* display: inline-block; */
+  padding-right: 29px;
+  /* max-width: 3px; */
+  height: 100%;
   text-decoration: none;
 }
 
